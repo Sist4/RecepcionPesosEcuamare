@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBEcuamareModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MATERIAL">
+    <Key>
+      <PropertyRef Name="MAT_ID" />
+    </Key>
+    <Property Name="MAT_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAT_NOMBRE" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PESO">
+    <Key>
+      <PropertyRef Name="PES_ID" />
+    </Key>
+    <Property Name="PES_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USU_ID" Type="int" />
+    <Property Name="TICK_ID" Type="int" />
+    <Property Name="PES_FECHA" Type="datetime" />
+    <Property Name="PES_PESO" Type="real" />
+    <Property Name="PES_PORCENTAJE" Type="int" Nullable="false" />
+    <Property Name="PES_TIPO" Type="int" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="PROV_ID" />
+    </Key>
+    <Property Name="PROV_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROV_RUC" Type="varchar" MaxLength="50" />
+    <Property Name="PROV_NOMBRE" Type="varchar" MaxLength="150" />
+    <Property Name="PROV_DIRECCION" Type="varchar" MaxLength="300" />
+    <Property Name="PROV_TELEFONO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TICKET">
+    <Key>
+      <PropertyRef Name="TICK_ID" />
+    </Key>
+    <Property Name="TICK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PROV_ID" Type="varchar" MaxLength="50" />
+    <Property Name="MAT_ID" Type="int" />
+    <Property Name="TICK_NUMERO" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TICK_NOMBRECONDUCTOR" Type="varchar" MaxLength="100" />
+    <Property Name="TICK_PLACAVEHICULO" Type="varchar" MaxLength="50" />
+    <Property Name="TICK_GUIA" Type="varchar" MaxLength="50" />
+    <Property Name="TICK_FORMAENTREGA" Type="varchar" MaxLength="50" />
+    <Property Name="TICK_ESTADO" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="USU_ID" />
+    </Key>
+    <Property Name="USU_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USU_USUARIO" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="USU_NOMBRES" Type="varchar" MaxLength="50" />
+    <Property Name="USU_CONTRASENA" Type="varchar" MaxLength="200" />
+    <Property Name="USU_ROL" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBEcuamare.dbo.V_TicketCompleto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_TicketCompleto">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TICKET" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TICKET" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" />
+    <Property Name="PROVEEDOR" Type="varchar" MaxLength="50" />
+    <Property Name="CONDUCTOR" Type="varchar" MaxLength="100" />
+    <Property Name="VEHICULO" Type="varchar" MaxLength="50" />
+    <Property Name="N# GUIA" Type="varchar" MaxLength="50" />
+    <Property Name="FORMA DE ENTREGA" Type="varchar" MaxLength="50" />
+    <Property Name="MATERIAL" Type="varchar" MaxLength="150" />
+    <Property Name="%MUESTRA" Type="int" />
+    <Property Name="FECHA ENTRADA" Type="datetime" />
+    <Property Name="USUARIO ENTRADA" Type="varchar" MaxLength="50" />
+    <Property Name="PESO ENTRADA" Type="real" />
+    <Property Name="FECHA IMPUREZAS" Type="datetime" />
+    <Property Name="USUARIO IMPUREZAS" Type="varchar" MaxLength="50" />
+    <Property Name="PESO IMPUREZAS" Type="real" />
+    <Property Name="FECHA SALIDA" Type="datetime" />
+    <Property Name="USUARIO SALIDA" Type="varchar" MaxLength="50" />
+    <Property Name="PESO SALIDA" Type="real" />
+    <Property Name="PESO BRUTO" Type="real" />
+    <Property Name="PESO NO CONFORME" Type="real" />
+    <Property Name="PESO NETO" Type="real" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBEcuamare.dbo.V_TicketImprimir' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="V_TicketImprimir">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TICKET" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="TICKET" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" />
+    <Property Name=" CODIGO PROVEEDOR" Type="varchar" MaxLength="50" />
+    <Property Name="RUC PROVEEDOR" Type="varchar" MaxLength="50" />
+    <Property Name="NOMBRE PROVEEDOR" Type="varchar" MaxLength="150" />
+    <Property Name="CONDUCTOR" Type="varchar" MaxLength="100" />
+    <Property Name="VEHICULO" Type="varchar" MaxLength="50" />
+    <Property Name="N# GUIA" Type="varchar" MaxLength="50" />
+    <Property Name="FECHA ENTRADA" Type="datetime" />
+    <Property Name="FECHA SALIDA" Type="datetime" />
+    <Property Name="FORMA DE ENTREGA" Type="varchar" MaxLength="50" />
+    <Property Name="MATERIAL" Type="varchar" MaxLength="150" />
+    <Property Name="PESO ENTRADA" Type="real" />
+    <Property Name="PESO SALIDA" Type="real" />
+    <Property Name="PESO BRUTO" Type="real" />
+    <Property Name="%MUESTRA" Type="int" />
+    <Property Name="PESO IMPUREZAS" Type="real" />
+    <Property Name="PESO NO CONFORME" Type="real" />
+    <Property Name="PESO NETO" Type="real" />
+  </EntityType>
+  <Association Name="FK_TICKET_RELATIONS_MATERIAL">
+    <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
+    <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MATERIAL">
+        <PropertyRef Name="MAT_ID" />
+      </Principal>
+      <Dependent Role="TICKET">
+        <PropertyRef Name="MAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TICKET_RELATIONS_PROVEEDO">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+    <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="PROV_ID" />
+      </Principal>
+      <Dependent Role="TICKET">
+        <PropertyRef Name="PROV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBEcuamareModelStoreContainer">
+    <EntitySet Name="MATERIAL" EntityType="Self.MATERIAL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PESO" EntityType="Self.PESO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TICKET" EntityType="Self.TICKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="V_TicketCompleto" EntityType="Self.V_TicketCompleto" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_TicketCompleto].[ID] AS [ID], 
+    [V_TicketCompleto].[TICKET] AS [TICKET], 
+    [V_TicketCompleto].[ESTADO] AS [ESTADO], 
+    [V_TicketCompleto].[PROVEEDOR] AS [PROVEEDOR], 
+    [V_TicketCompleto].[CONDUCTOR] AS [CONDUCTOR], 
+    [V_TicketCompleto].[VEHICULO] AS [VEHICULO], 
+    [V_TicketCompleto].[N# GUIA] AS [N# GUIA], 
+    [V_TicketCompleto].[FORMA DE ENTREGA] AS [FORMA DE ENTREGA], 
+    [V_TicketCompleto].[MATERIAL] AS [MATERIAL], 
+    [V_TicketCompleto].[%MUESTRA] AS [%MUESTRA], 
+    [V_TicketCompleto].[FECHA ENTRADA] AS [FECHA ENTRADA], 
+    [V_TicketCompleto].[USUARIO ENTRADA] AS [USUARIO ENTRADA], 
+    [V_TicketCompleto].[PESO ENTRADA] AS [PESO ENTRADA], 
+    [V_TicketCompleto].[FECHA IMPUREZAS] AS [FECHA IMPUREZAS], 
+    [V_TicketCompleto].[USUARIO IMPUREZAS] AS [USUARIO IMPUREZAS], 
+    [V_TicketCompleto].[PESO IMPUREZAS] AS [PESO IMPUREZAS], 
+    [V_TicketCompleto].[FECHA SALIDA] AS [FECHA SALIDA], 
+    [V_TicketCompleto].[USUARIO SALIDA] AS [USUARIO SALIDA], 
+    [V_TicketCompleto].[PESO SALIDA] AS [PESO SALIDA], 
+    [V_TicketCompleto].[PESO BRUTO] AS [PESO BRUTO], 
+    [V_TicketCompleto].[PESO NO CONFORME] AS [PESO NO CONFORME], 
+    [V_TicketCompleto].[PESO NETO] AS [PESO NETO]
+    FROM [dbo].[V_TicketCompleto] AS [V_TicketCompleto]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_TicketImprimir" EntityType="Self.V_TicketImprimir" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [V_TicketImprimir].[ID] AS [ID], 
+    [V_TicketImprimir].[TICKET] AS [TICKET], 
+    [V_TicketImprimir].[ESTADO] AS [ESTADO], 
+    [V_TicketImprimir].[ CODIGO PROVEEDOR] AS [ CODIGO PROVEEDOR], 
+    [V_TicketImprimir].[RUC PROVEEDOR] AS [RUC PROVEEDOR], 
+    [V_TicketImprimir].[NOMBRE PROVEEDOR] AS [NOMBRE PROVEEDOR], 
+    [V_TicketImprimir].[CONDUCTOR] AS [CONDUCTOR], 
+    [V_TicketImprimir].[VEHICULO] AS [VEHICULO], 
+    [V_TicketImprimir].[N# GUIA] AS [N# GUIA], 
+    [V_TicketImprimir].[FECHA ENTRADA] AS [FECHA ENTRADA], 
+    [V_TicketImprimir].[FECHA SALIDA] AS [FECHA SALIDA], 
+    [V_TicketImprimir].[FORMA DE ENTREGA] AS [FORMA DE ENTREGA], 
+    [V_TicketImprimir].[MATERIAL] AS [MATERIAL], 
+    [V_TicketImprimir].[PESO ENTRADA] AS [PESO ENTRADA], 
+    [V_TicketImprimir].[PESO SALIDA] AS [PESO SALIDA], 
+    [V_TicketImprimir].[PESO BRUTO] AS [PESO BRUTO], 
+    [V_TicketImprimir].[%MUESTRA] AS [%MUESTRA], 
+    [V_TicketImprimir].[PESO IMPUREZAS] AS [PESO IMPUREZAS], 
+    [V_TicketImprimir].[PESO NO CONFORME] AS [PESO NO CONFORME], 
+    [V_TicketImprimir].[PESO NETO] AS [PESO NETO]
+    FROM [dbo].[V_TicketImprimir] AS [V_TicketImprimir]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_TICKET_RELATIONS_MATERIAL" Association="Self.FK_TICKET_RELATIONS_MATERIAL">
+      <End Role="MATERIAL" EntitySet="MATERIAL" />
+      <End Role="TICKET" EntitySet="TICKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TICKET_RELATIONS_PROVEEDO" Association="Self.FK_TICKET_RELATIONS_PROVEEDO">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="TICKET" EntitySet="TICKET" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

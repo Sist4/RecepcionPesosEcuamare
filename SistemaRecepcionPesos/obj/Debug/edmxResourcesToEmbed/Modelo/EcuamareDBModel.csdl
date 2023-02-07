@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBEcuamareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MATERIAL">
+    <Key>
+      <PropertyRef Name="MAT_ID" />
+    </Key>
+    <Property Name="MAT_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MAT_NOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TICKETs" Relationship="Self.FK_TICKET_RELATIONS_MATERIAL" FromRole="MATERIAL" ToRole="TICKET" />
+  </EntityType>
+  <EntityType Name="PESO">
+    <Key>
+      <PropertyRef Name="PES_ID" />
+    </Key>
+    <Property Name="PES_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USU_ID" Type="Int32" />
+    <Property Name="TICK_ID" Type="Int32" />
+    <Property Name="PES_FECHA" Type="DateTime" Precision="3" />
+    <Property Name="PES_PESO" Type="Single" />
+    <Property Name="PES_PORCENTAJE" Type="Int32" Nullable="false" />
+    <Property Name="PES_TIPO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="PROV_ID" />
+    </Key>
+    <Property Name="PROV_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PROV_RUC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PROV_NOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PROV_DIRECCION" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="PROV_TELEFONO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TICKETs" Relationship="Self.FK_TICKET_RELATIONS_PROVEEDO" FromRole="PROVEEDOR" ToRole="TICKET" />
+  </EntityType>
+  <EntityType Name="TICKET">
+    <Key>
+      <PropertyRef Name="TICK_ID" />
+    </Key>
+    <Property Name="TICK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROV_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MAT_ID" Type="Int32" />
+    <Property Name="TICK_NUMERO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TICK_NOMBRECONDUCTOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="TICK_PLACAVEHICULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TICK_GUIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TICK_FORMAENTREGA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TICK_ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MATERIAL" Relationship="Self.FK_TICKET_RELATIONS_MATERIAL" FromRole="TICKET" ToRole="MATERIAL" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK_TICKET_RELATIONS_PROVEEDO" FromRole="TICKET" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="USU_ID" />
+    </Key>
+    <Property Name="USU_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USU_USUARIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="USU_NOMBRES" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="USU_CONTRASENA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="USU_ROL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_TicketCompleto">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TICKET" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TICKET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PROVEEDOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONDUCTOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VEHICULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="N__GUIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FORMA_DE_ENTREGA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MATERIAL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="C_MUESTRA" Type="Int32" />
+    <Property Name="FECHA_ENTRADA" Type="DateTime" Precision="3" />
+    <Property Name="USUARIO_ENTRADA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PESO_ENTRADA" Type="Single" />
+    <Property Name="FECHA_IMPUREZAS" Type="DateTime" Precision="3" />
+    <Property Name="USUARIO_IMPUREZAS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PESO_IMPUREZAS" Type="Single" />
+    <Property Name="FECHA_SALIDA" Type="DateTime" Precision="3" />
+    <Property Name="USUARIO_SALIDA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PESO_SALIDA" Type="Single" />
+    <Property Name="PESO_BRUTO" Type="Single" />
+    <Property Name="PESO_NO_CONFORME" Type="Single" />
+    <Property Name="PESO_NETO" Type="Single" />
+  </EntityType>
+  <EntityType Name="V_TicketImprimir">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TICKET" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="TICKET" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="C_CODIGO_PROVEEDOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RUC_PROVEEDOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOMBRE_PROVEEDOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CONDUCTOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="VEHICULO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="N__GUIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_ENTRADA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_SALIDA" Type="DateTime" Precision="3" />
+    <Property Name="FORMA_DE_ENTREGA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MATERIAL" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PESO_ENTRADA" Type="Single" />
+    <Property Name="PESO_SALIDA" Type="Single" />
+    <Property Name="PESO_BRUTO" Type="Single" />
+    <Property Name="C_MUESTRA" Type="Int32" />
+    <Property Name="PESO_IMPUREZAS" Type="Single" />
+    <Property Name="PESO_NO_CONFORME" Type="Single" />
+    <Property Name="PESO_NETO" Type="Single" />
+  </EntityType>
+  <Association Name="FK_TICKET_RELATIONS_MATERIAL">
+    <End Role="MATERIAL" Type="Self.MATERIAL" Multiplicity="0..1" />
+    <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MATERIAL">
+        <PropertyRef Name="MAT_ID" />
+      </Principal>
+      <Dependent Role="TICKET">
+        <PropertyRef Name="MAT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TICKET_RELATIONS_PROVEEDO">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="0..1" />
+    <End Role="TICKET" Type="Self.TICKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="PROV_ID" />
+      </Principal>
+      <Dependent Role="TICKET">
+        <PropertyRef Name="PROV_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBEcuamareEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MATERIALES" EntityType="Self.MATERIAL" />
+    <EntitySet Name="PESOS" EntityType="Self.PESO" />
+    <EntitySet Name="PROVEEDORES" EntityType="Self.PROVEEDOR" />
+    <EntitySet Name="TICKETS" EntityType="Self.TICKET" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIO" />
+    <EntitySet Name="V_TicketCompleto" EntityType="Self.V_TicketCompleto" />
+    <EntitySet Name="V_TicketImprimir" EntityType="Self.V_TicketImprimir" />
+    <AssociationSet Name="FK_TICKET_RELATIONS_MATERIAL" Association="Self.FK_TICKET_RELATIONS_MATERIAL">
+      <End Role="MATERIAL" EntitySet="MATERIALES" />
+      <End Role="TICKET" EntitySet="TICKETS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TICKET_RELATIONS_PROVEEDO" Association="Self.FK_TICKET_RELATIONS_PROVEEDO">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDORES" />
+      <End Role="TICKET" EntitySet="TICKETS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

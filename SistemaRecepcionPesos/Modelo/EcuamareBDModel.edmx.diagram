@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e20f1a69eb04cf79728f9337249e307" Name="Diagram1">
+        <EntityTypeShape EntityType="DBEcuamareModel.CONFIGURACION" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.MATERIAL" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.PERMISO" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.PESO" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.PROVEEDOR" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.TICKET" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.USUARIO" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.V_TicketCompleto" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBEcuamareModel.V_TicketImprimir" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="DBEcuamareModel.FK_TICKET_RELATIONS_MATERIAL" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEcuamareModel.FK_PERMISO_RELATIONS_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEcuamareModel.FK_PESO_RELATIONS_TICKET" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEcuamareModel.FK_PESO_RELATIONS_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="DBEcuamareModel.FK_TICKET_RELATIONS_PROVEEDO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

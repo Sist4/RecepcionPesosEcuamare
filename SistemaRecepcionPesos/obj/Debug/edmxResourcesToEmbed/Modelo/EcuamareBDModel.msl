@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBEcuamareModelStoreContainer" CdmEntityContainer="DBEcuamareEntities">
+    <EntitySetMapping Name="CONFIGURACIONES">
+      <EntityTypeMapping TypeName="DBEcuamareModel.CONFIGURACION">
+        <MappingFragment StoreEntitySet="CONFIGURACION">
+          <ScalarProperty Name="CON_ID" ColumnName="CON_ID" />
+          <ScalarProperty Name="CON_COMCAMIONERA" ColumnName="CON_COMCAMIONERA" />
+          <ScalarProperty Name="CON_SERIALCAMIONERA" ColumnName="CON_SERIALCAMIONERA" />
+          <ScalarProperty Name="CON_COMPISO" ColumnName="CON_COMPISO" />
+          <ScalarProperty Name="CON_SERIALPISO" ColumnName="CON_SERIALPISO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MATERIALES">
+      <EntityTypeMapping TypeName="DBEcuamareModel.MATERIAL">
+        <MappingFragment StoreEntitySet="MATERIAL">
+          <ScalarProperty Name="MAT_ID" ColumnName="MAT_ID" />
+          <ScalarProperty Name="MAT_NOMBRE" ColumnName="MAT_NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERMISOS">
+      <EntityTypeMapping TypeName="DBEcuamareModel.PERMISO">
+        <MappingFragment StoreEntitySet="PERMISO">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="PER_ID" ColumnName="PER_ID" />
+          <ScalarProperty Name="PER_ANULARTICKET" ColumnName="PER_ANULARTICKET" />
+          <ScalarProperty Name="PER_USUARIOS" ColumnName="PER_USUARIOS" />
+          <ScalarProperty Name="PER_CONFIGURACION" ColumnName="PER_CONFIGURACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PESOS">
+      <EntityTypeMapping TypeName="DBEcuamareModel.PESO">
+        <MappingFragment StoreEntitySet="PESO">
+          <ScalarProperty Name="PES_ID" ColumnName="PES_ID" />
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="TICK_ID" ColumnName="TICK_ID" />
+          <ScalarProperty Name="PES_FECHA" ColumnName="PES_FECHA" />
+          <ScalarProperty Name="PES_PESO" ColumnName="PES_PESO" />
+          <ScalarProperty Name="PES_PORCENTAJE" ColumnName="PES_PORCENTAJE" />
+          <ScalarProperty Name="PES_TIPO" ColumnName="PES_TIPO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROVEEDORES">
+      <EntityTypeMapping TypeName="DBEcuamareModel.PROVEEDOR">
+        <MappingFragment StoreEntitySet="PROVEEDOR">
+          <ScalarProperty Name="PROV_ID" ColumnName="PROV_ID" />
+          <ScalarProperty Name="PROV_RUC" ColumnName="PROV_RUC" />
+          <ScalarProperty Name="PROV_NOMBRE" ColumnName="PROV_NOMBRE" />
+          <ScalarProperty Name="PROV_DIRECCION" ColumnName="PROV_DIRECCION" />
+          <ScalarProperty Name="PROV_TELEFONO" ColumnName="PROV_TELEFONO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TICKETS">
+      <EntityTypeMapping TypeName="DBEcuamareModel.TICKET">
+        <MappingFragment StoreEntitySet="TICKET">
+          <ScalarProperty Name="TICK_ID" ColumnName="TICK_ID" />
+          <ScalarProperty Name="PROV_ID" ColumnName="PROV_ID" />
+          <ScalarProperty Name="MAT_ID" ColumnName="MAT_ID" />
+          <ScalarProperty Name="TICK_NUMERO" ColumnName="TICK_NUMERO" />
+          <ScalarProperty Name="TICK_NOMBRECONDUCTOR" ColumnName="TICK_NOMBRECONDUCTOR" />
+          <ScalarProperty Name="TICK_PLACAVEHICULO" ColumnName="TICK_PLACAVEHICULO" />
+          <ScalarProperty Name="TICK_GUIA" ColumnName="TICK_GUIA" />
+          <ScalarProperty Name="TICK_FORMAENTREGA" ColumnName="TICK_FORMAENTREGA" />
+          <ScalarProperty Name="TICK_ESTADO" ColumnName="TICK_ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="DBEcuamareModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
+          <ScalarProperty Name="USU_USUARIO" ColumnName="USU_USUARIO" />
+          <ScalarProperty Name="USU_NOMBRES" ColumnName="USU_NOMBRES" />
+          <ScalarProperty Name="USU_CONTRASENA" ColumnName="USU_CONTRASENA" />
+          <ScalarProperty Name="USU_ROL" ColumnName="USU_ROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_TicketCompleto">
+      <EntityTypeMapping TypeName="DBEcuamareModel.V_TicketCompleto">
+        <MappingFragment StoreEntitySet="V_TicketCompleto">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TICKET" ColumnName="TICKET" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="PROVEEDOR" ColumnName="PROVEEDOR" />
+          <ScalarProperty Name="CONDUCTOR" ColumnName="CONDUCTOR" />
+          <ScalarProperty Name="VEHICULO" ColumnName="VEHICULO" />
+          <ScalarProperty Name="N__GUIA" ColumnName="N# GUIA" />
+          <ScalarProperty Name="FORMA_DE_ENTREGA" ColumnName="FORMA DE ENTREGA" />
+          <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+          <ScalarProperty Name="C_MUESTRA" ColumnName="%MUESTRA" />
+          <ScalarProperty Name="FECHA_ENTRADA" ColumnName="FECHA ENTRADA" />
+          <ScalarProperty Name="USUARIO_ENTRADA" ColumnName="USUARIO ENTRADA" />
+          <ScalarProperty Name="PESO_ENTRADA" ColumnName="PESO ENTRADA" />
+          <ScalarProperty Name="FECHA_IMPUREZAS" ColumnName="FECHA IMPUREZAS" />
+          <ScalarProperty Name="USUARIO_IMPUREZAS" ColumnName="USUARIO IMPUREZAS" />
+          <ScalarProperty Name="PESO_IMPUREZAS" ColumnName="PESO IMPUREZAS" />
+          <ScalarProperty Name="FECHA_SALIDA" ColumnName="FECHA SALIDA" />
+          <ScalarProperty Name="USUARIO_SALIDA" ColumnName="USUARIO SALIDA" />
+          <ScalarProperty Name="PESO_SALIDA" ColumnName="PESO SALIDA" />
+          <ScalarProperty Name="PESO_BRUTO" ColumnName="PESO BRUTO" />
+          <ScalarProperty Name="PESO_NO_CONFORME" ColumnName="PESO NO CONFORME" />
+          <ScalarProperty Name="PESO_NETO" ColumnName="PESO NETO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_TicketImprimir">
+      <EntityTypeMapping TypeName="DBEcuamareModel.V_TicketImprimir">
+        <MappingFragment StoreEntitySet="V_TicketImprimir">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TICKET" ColumnName="TICKET" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="C_CODIGO_PROVEEDOR" ColumnName=" CODIGO PROVEEDOR" />
+          <ScalarProperty Name="RUC_PROVEEDOR" ColumnName="RUC PROVEEDOR" />
+          <ScalarProperty Name="NOMBRE_PROVEEDOR" ColumnName="NOMBRE PROVEEDOR" />
+          <ScalarProperty Name="CONDUCTOR" ColumnName="CONDUCTOR" />
+          <ScalarProperty Name="VEHICULO" ColumnName="VEHICULO" />
+          <ScalarProperty Name="N__GUIA" ColumnName="N# GUIA" />
+          <ScalarProperty Name="FECHA_ENTRADA" ColumnName="FECHA ENTRADA" />
+          <ScalarProperty Name="FECHA_SALIDA" ColumnName="FECHA SALIDA" />
+          <ScalarProperty Name="FORMA_DE_ENTREGA" ColumnName="FORMA DE ENTREGA" />
+          <ScalarProperty Name="MATERIAL" ColumnName="MATERIAL" />
+          <ScalarProperty Name="PESO_ENTRADA" ColumnName="PESO ENTRADA" />
+          <ScalarProperty Name="PESO_SALIDA" ColumnName="PESO SALIDA" />
+          <ScalarProperty Name="PESO_BRUTO" ColumnName="PESO BRUTO" />
+          <ScalarProperty Name="C_MUESTRA" ColumnName="%MUESTRA" />
+          <ScalarProperty Name="PESO_IMPUREZAS" ColumnName="PESO IMPUREZAS" />
+          <ScalarProperty Name="PESO_NO_CONFORME" ColumnName="PESO NO CONFORME" />
+          <ScalarProperty Name="PESO_NETO" ColumnName="PESO NETO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
