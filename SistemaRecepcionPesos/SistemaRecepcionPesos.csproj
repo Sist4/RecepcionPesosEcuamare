@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22EEC86B-0777-48AE-9D15-FAC0E124F062}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaRecepcionPesos</RootNamespace>
+    <AssemblyName>SistemaRecepcionPesos</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialSkin.2.2.3.1\lib\net48\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controlador\ConfiguracionController.cs" />
+    <Compile Include="Controlador\LoginController.cs" />
+    <Compile Include="Controlador\MaterialController.cs" />
+    <Compile Include="Controlador\ProveedorController.cs" />
+    <Compile Include="Controlador\RecepcionController.cs" />
+    <Compile Include="Controlador\TicketController.cs" />
+    <Compile Include="Controlador\UsuariosController.cs" />
+    <Compile Include="Modelo\CONFIGURACION.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\EcuamareBDModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcuamareBDModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\EcuamareBDModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\EcuamareBDModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EcuamareBDModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\MATERIAL.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PERMISO.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PESO.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\PROVEEDOR.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\TICKET.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\USUARIO.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\V_TicketCompleto.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\V_TicketImprimir.cs">
+      <DependentUpon>EcuamareBDModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Negocio\ObtencionPeso.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VAcerca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VAcerca.Designer.cs">
+      <DependentUpon>VAcerca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VConfiguracion.Designer.cs">
+      <DependentUpon>VConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VLogin.Designer.cs">
+      <DependentUpon>VLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VMateriales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VMateriales.Designer.cs">
+      <DependentUpon>VMateriales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VNuevoConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VNuevoConfiguracion.Designer.cs">
+      <DependentUpon>VNuevoConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VObtenerPeso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VObtenerPeso.Designer.cs">
+      <DependentUpon>VObtenerPeso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VPrincipal.Designer.cs">
+      <DependentUpon>VPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\VProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VProveedores.Designer.cs">
+      <DependentUpon>VProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VRecepcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VRecepcion.Designer.cs">
+      <DependentUpon>VRecepcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VTickets.Designer.cs">
+      <DependentUpon>VTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\VUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\VUsuarios.Designer.cs">
+      <DependentUpon>VUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VAcerca.resx">
+      <DependentUpon>VAcerca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VConfiguracion.resx">
+      <DependentUpon>VConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VLogin.resx">
+      <DependentUpon>VLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VMateriales.resx">
+      <DependentUpon>VMateriales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VNuevoConfiguracion.resx">
+      <DependentUpon>VNuevoConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VObtenerPeso.resx">
+      <DependentUpon>VObtenerPeso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VPrincipal.resx">
+      <DependentUpon>VPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VProveedores.resx">
+      <DependentUpon>VProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VRecepcion.resx">
+      <DependentUpon>VRecepcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VTickets.resx">
+      <DependentUpon>VTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\VUsuarios.resx">
+      <DependentUpon>VUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Modelo\EcuamareBDModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EcuamareBDModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\EcuamareBDModel.edmx.diagram">
+      <DependentUpon>EcuamareBDModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tickets1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ESPA-446.png" />
+    <None Include="Resources\PRECI-446.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\truck-negro.png" />
+    <None Include="Resources\truck-texto.png" />
+    <None Include="Resources\truck-home.png" />
+    <None Include="Resources\ecuamare-1.png" />
+    <None Include="Resources\truck.p2png.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\cross2.png" />
+    <None Include="Resources\logo-ecuamare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Modelo\EcuamareBDModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EcuamareBDModel.edmx</DependentUpon>
+      <LastGenOutput>EcuamareBDModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo\EcuamareBDModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EcuamareBDModel.edmx</DependentUpon>
+      <LastGenOutput>EcuamareBDModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
