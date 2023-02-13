@@ -16,13 +16,13 @@
         "Entry"
         {
         "MsmKey" = "8:_07CC26CD290F26A5753CE8758EDDAE5A"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_25AE773C2BCE93D3A765031C0734A24F"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,25 +40,19 @@
         "Entry"
         {
         "MsmKey" = "8:_2D7A0A93FC853520A3A5A52EE9420308"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_553B5301A5F97885EE1FFF7C0F0EDB08"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_69D79FF277694C7D99680680CB7340FB"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_85100E1C797AF1E2617747368BAAD643"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -70,13 +64,19 @@
         "Entry"
         {
         "MsmKey" = "8:_A51149C642155D505F0F935187F10BCD"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_A6841724136998B6F942A45A685379C7"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -88,7 +88,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_69D79FF277694C7D99680680CB7340FB"
+        "OwnerKey" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -647,7 +647,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_41D9EA0B60F3456ABFABA9D5C39CB715"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_15748243DA064AC68B690D5A266FF905"
             {
             "Name" = "8:Sistema de Recepción de Pesos"
             "Arguments" = "8:"
@@ -655,13 +655,13 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_69D79FF277694C7D99680680CB7340FB"
-            "Folder" = "8:_E50D6E293AAA4F598A09B6F430F55DC2"
+            "Target" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
+            "Folder" = "8:_7A0993D0C0DD4366BC30A9B52C00EDA6"
             "WorkingFolder" = "8:_48C5AF79B6F04CD9968FAA9F575E68AD"
             "Icon" = "8:_2C1D0F474D6647DF98BE8098C8EF452D"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C88431263908412E93FAEA884C493E65"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F1AE25859FD04437B3FF46DC018E9C48"
             {
             "Name" = "8:Sistema de Recepción de Pesos"
             "Arguments" = "8:"
@@ -669,8 +669,8 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_69D79FF277694C7D99680680CB7340FB"
-            "Folder" = "8:_7A0993D0C0DD4366BC30A9B52C00EDA6"
+            "Target" = "8:_DFDB6F3D653D49DCB018C1C585152B18"
+            "Folder" = "8:_E50D6E293AAA4F598A09B6F430F55DC2"
             "WorkingFolder" = "8:_48C5AF79B6F04CD9968FAA9F575E68AD"
             "Icon" = "8:_2C1D0F474D6647DF98BE8098C8EF452D"
             "Feature" = "8:"
@@ -1074,7 +1074,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_69D79FF277694C7D99680680CB7340FB"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DFDB6F3D653D49DCB018C1C585152B18"
             {
             "SourcePath" = "8:..\\SistemaRecepcionPesos\\obj\\Debug\\SistemaRecepcionPesos.exe"
             "TargetName" = "8:"
