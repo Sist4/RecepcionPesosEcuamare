@@ -37,7 +37,14 @@ namespace SistemaRecepcionPesos.Controlador
             string añoActual = DateTime.Now.Year.ToString();
             string ceros = string.Empty;
 
-            string ticketNumero = bd.TICKETS.Where(u=>u.TICK_NUMERO.Substring(0,4).Equals(añoActual)).Max(u => u.TICK_NUMERO.Substring(5,3));
+            //string ticketNumero = bd.TICKETS.Where(u=>u.TICK_NUMERO.Substring(0,4).Equals(añoActual)).Max(u => u.TICK_NUMERO.Substring(5,u.TICK_NUMERO.Length-5));
+            int numMax = bd.TICKETS.Max(u=>u.TICK_ID);
+            var ticket=bd.TICKETS.OrderByDescending(t=>t.TICK_ID).FirstOrDefault();
+            string ticketNumero = "";
+            if(ticket.TICK_NUMERO.Substring(0,4).Equals(añoActual))
+            {
+                ticketNumero = ticket.TICK_NUMERO.Substring(5, ticket.TICK_NUMERO.Length - 5);
+            }
             int x = string.IsNullOrEmpty(ticketNumero) ? 1: Convert.ToInt32(ticketNumero);
 
             string numeroTicket = (x + 1).ToString();

@@ -108,7 +108,6 @@ namespace SistemaRecepcionPesos.Vista
                 proveedorPorEditar = controlador.ObtenerProveedorPorId(item.SubItems[0].Text);
                 CargarProveedorPorEditar(proveedorPorEditar);
                 btnGuardarEditado.Visible = true;
-
             }
         }
         private void CargarProveedorPorEditar(PROVEEDOR proveedor)
